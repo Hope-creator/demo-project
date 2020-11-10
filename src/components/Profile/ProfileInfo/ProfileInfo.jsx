@@ -1,22 +1,28 @@
 import React from 'react';
 import Preloader from '../../common/preloader/Preloader';
 import s from './ProfileInfo.module.css';
-import ProfileStatus from './ProfileStatus';
 import ProfileStatusWithHooks from './ProfileStatusWithHooks';
+import profilePicture from '../../../img/profilePic.png';
+
 
 const ProfileInfo = (props) => {
 
     if (!props.profile) {
         return <Preloader />
     }
+
+    const newPhotoSelected = (e) => {
+        props.savePhoto(e.target.files[0])
+    }
+
     //props.profile.aboutMe
     return (
         <div className={s.profile_wrapper}>
             <div className={s.profileBlock}>
                 <div className={s.profileHeaderBlock}>
-                    <img className={s.profile_picture} src={props.profile.photos.large} />
+                    <img className={s.profile_picture} src={props.profile.photos.large || profilePicture} />
                     <h3> {props.profile.fullName} </h3>
-                    <button>following</button>
+                    {props.profileOwner && <input type='file' onChange={newPhotoSelected} />}
                 </div>
                 <div className={s.profileBodyBlock}></div>
                 

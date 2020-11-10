@@ -13,21 +13,23 @@ export const usersAPI = {
     getUsers: (currentPage = 1, pageSize = 10) => instance
         .get(`users?page=${currentPage}&count=${pageSize}`),
     follow: (id) => instance.post(`follow/${id}`),
-    unfollow:  (id) => instance.delete(`follow/${id}`)
+    unfollow: (id) => instance.delete(`follow/${id}`)
 }
 
 export const authAPI = {
     getAuth: () => instance.get(`auth/me`),
-    authLogin: (email,password) => instance.post(`auth/login`,{
-            email,
-            password
-        }),
-    authLogout:  () => instance.delete(`auth/login`)
+    authLogin: (email, password) => instance.post(`auth/login`, {
+        email,
+        password
+    }),
+    authLogout: () => instance.delete(`auth/login`)
 }
 
 export const profileAPI = {
     getProfile: (id) => instance.get(`profile/${id}`),
-    getStatus:  (id) => instance.get(`profile/status/${id}`),
-    updateStatus: async (status) => instance.put(`profile/status`, { status })
+    getStatus: (id) => instance.get(`profile/status/${id}`),
+    updateStatus: async (status) => instance.put(`profile/status`, { status }),
+    updatePhoto: (file) => {
+        return instance.put(`profile/photo`,file)
+    }
 }
-

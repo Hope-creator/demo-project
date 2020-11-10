@@ -13,7 +13,6 @@ let Paginator = ({ totalUsersCount, currentPage, onPageChange, pageSize, portion
     let portionCount = Math.ceil(pageCount / portionSize);
     let leftPortionNumber = (portionNumber - 1) * portionSize + 1;
     let rightPortionNumber = portionNumber * portionSize
-    debugger
     for (let i = 1; i <= pageCount; i++) {
         pages.push(i)
     }

@@ -25,7 +25,8 @@ class App extends React.Component {
   }
 
   render() {
-    return /*!this.props.initialized ? <Preloader /> :*/(
+    return !this.props.initialized ? <Preloader /> : 
+        /* not working with initialized on github */(
         <div className="app-wrapper">
           <HeaderContainer />
           <Navbar />

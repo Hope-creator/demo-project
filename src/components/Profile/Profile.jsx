@@ -9,7 +9,10 @@ const Profile = (props) => {
         <div className={s.content}>
             <div className={s.profileInfo}><ProfileInfo profile={props.profile} 
             status={props.status} 
-            updateStatus={props.updateStatus}/></div>
+            updateStatus={props.updateStatus}
+            profileOwner={props.profileOwner}
+            savePhoto={props.savePhoto}
+            /></div>
             <div className={s.profileContent}><MyPostsContainer /></div>
         </div>
     )
