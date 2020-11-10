@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
-import { BrowserRouter, HashRouter, Route } from 'react-router-dom';
+import {HashRouter, Route } from 'react-router-dom';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import UsersConainer from './components/Users/UsersContainer';
