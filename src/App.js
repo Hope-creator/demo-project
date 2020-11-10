@@ -25,8 +25,7 @@ class App extends React.Component {
   }
 
   render() {
-    return !this.props.initialized ? <Preloader /> :
-      (
+    return /*!this.props.initialized ? <Preloader /> :*/(
         <div className="app-wrapper">
           <HeaderContainer />
           <Navbar />
