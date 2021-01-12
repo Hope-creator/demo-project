@@ -1,5 +1,6 @@
 import React from 'react';
 import { Field, Form } from 'react-final-form';
+<<<<<<< HEAD
 import { maxLength } from '../../utils/validators/validators';
 import s from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogItem';
@@ -42,18 +43,62 @@ const Dialogs = ({ messagesProfiles, dialogsMessages, onAddMessage, currentConve
             </div> 
             : null}
             
+=======
+import { Redirect } from 'react-router-dom';
+import { composeValidators, maxLength, required } from '../../utils/validators/validators';
+import { Textarea } from '../common/FormsContol/FormsControl';
+import DialogItem from './DialogItem/DialogItem';
+import s from './Dialogs.module.css';
+import Message from './Message/Message';
+
+
+const Dialogs = (props) => {
+    let dialogsPage = props.dialogsPage
+
+    let dialogsElements = dialogsPage.dialogsItems.map((d) =>
+        <DialogItem name={d.name} id={d.id} media_src={d.media_src} />)
+
+    let messagesElements = dialogsPage.dialogsMessages.map((m) =>
+        <Message message={m.message} />)
+
+   let onAddMessage = (values) => {
+        props.addMessage(values);
+    }
+
+    if (!props.isAuth) return <Redirect to={"/login"} />;
+
+    
+    return (
+        <div className={s.dialogs}>
+
+            <div className={s.dialogs_items}>
+                {dialogsElements}
+            </div>
+            <div className={s.messagesWrapper}>
+                <AddMessageForm onAddMessage={onAddMessage}/>
+            </div>
+            <div className={s.messages}>
+                {messagesElements}
+            </div>
+>>>>>>> d44ff18a5c7427420ddd9648024489b0ea2c8091
         </div >
     )
 }
 
 const AddMessageForm = (props) => {
+<<<<<<< HEAD
 
     const onSubmit = (values) => {
         props.onAddMessage(props.currentConversation, props.ownerId, values.newMessageBody);
+=======
+    const onSubmit = (values) => {
+        props.onAddMessage(values.newMessageBody)
+>>>>>>> d44ff18a5c7427420ddd9648024489b0ea2c8091
     }
 
     return (
         <Form
+<<<<<<< HEAD
         initialValues={{newMessageBody: ''}}
             onSubmit={onSubmit}
             render={({ handleSubmit, values, form }) =>
@@ -72,6 +117,16 @@ const AddMessageForm = (props) => {
                                 </div>
                             )}
                             </Field>
+=======
+            onSubmit={onSubmit}
+            render={({ handleSubmit }) =>
+                <form onSubmit={handleSubmit}>
+                    <div className={s.sendButton}>
+                        <button className={s.message_button} type="submit">Send</button>
+                        <button className={s.message_button} type="button">add file</button>
+                        <div className={s.message_area}>
+                            <Field name="newMessageBody" validate={ composeValidators(required, maxLength(100))} component={Textarea} placeholder="Enter your message" />
+>>>>>>> d44ff18a5c7427420ddd9648024489b0ea2c8091
                         </div>
                     </div>
                 </form>}

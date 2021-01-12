@@ -1,0 +1,11 @@
+.item {
+    color:black;
+  }
+
+.item img {
+  width: 50px;
+  max-height: 50px;
+  object-fit: contain;
+  border-radius: 25%;
+  background-color: black;
+}

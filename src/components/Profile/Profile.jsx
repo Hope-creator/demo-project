@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 import s from './Profile.module.css';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 import ProfilePhotosBlock from './ProfilePhotos/ProfilePhotosContainer';
@@ -36,6 +37,23 @@ const Profile = (props) => {
                     /></div>
                 </div>
             </div>
+=======
+import MyPostsContainer from './MyPosts/MyPostsContainer';
+import s from './Profile.module.css';
+import ProfileInfo from './ProfileInfo/ProfileInfo';
+
+window.props = [];
+const Profile = (props) => {
+    return (
+        <div className={s.content}>
+            <div className={s.profileInfo}><ProfileInfo profile={props.profile} 
+            status={props.status} 
+            updateStatus={props.updateStatus}
+            profileOwner={props.profileOwner}
+            savePhoto={props.savePhoto}
+            /></div>
+            <div className={s.profileContent}><MyPostsContainer /></div>
+>>>>>>> d44ff18a5c7427420ddd9648024489b0ea2c8091
         </div>
     )
 }

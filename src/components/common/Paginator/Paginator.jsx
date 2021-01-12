@@ -25,7 +25,11 @@ let Paginator = ({ totalUsersCount, currentPage, onPageChange, pageSize, portion
             {pages
                 .filter(p => p >= leftPortionNumber && p <= rightPortionNumber)
                 .map((page) =>
+<<<<<<< HEAD
                     <span key={page} className={currentPage === page && s.selectedPage || undefined}
+=======
+                    <span className={currentPage === page && s.selectedPage}
+>>>>>>> d44ff18a5c7427420ddd9648024489b0ea2c8091
                         onClick={(e) => onPageChange(page)}
                     >{page}
                     </span>)}

@@ -1,0 +1,26 @@
+.post_area {
+    width: 100%;
+}
+
+
+.post_area  textarea {
+    resize: none;
+    width: 100%;
+    height: 100% ;
+    border: 1px solid #8b8b8b;
+    box-sizing: border-box;
+}
+
+.post_area textarea:focus {
+    outline: none;
+}
+
+.postsWrapper {
+    display: flex;
+    height: 33px;
+}
+
+.posts {
+    display: flex;
+    flex-direction: column;
+}

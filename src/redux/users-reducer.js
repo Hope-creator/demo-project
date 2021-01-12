@@ -4,12 +4,18 @@ import { objectInArray } from "../utils/object-helpers/object-helpers";
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET-USERS';
+<<<<<<< HEAD
 const CLEAR_USERS = 'CLEAR_USERS';
+=======
+>>>>>>> d44ff18a5c7427420ddd9648024489b0ea2c8091
 const COUNT_USERS = 'COUNT-USERS';
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
 const TOGGLE_IS_FOLLOWING_IN_PROGRESS = 'TOGGLE_IS_FOLLOWING_IN_PROGRESS';
+<<<<<<< HEAD
 const SET_SEATCH_USER_NAME = 'SET_SEATCH_USER_NAME';
+=======
+>>>>>>> d44ff18a5c7427420ddd9648024489b0ea2c8091
 
 let initialState = {
     users: [
@@ -19,7 +25,10 @@ let initialState = {
     currentPage: 1,
     isFetching: true,
     followingInProgress: [],
+<<<<<<< HEAD
     searchUsersName: ''
+=======
+>>>>>>> d44ff18a5c7427420ddd9648024489b0ea2c8091
 }
 
 const usersReducer = (state = initialState, action) => {
@@ -28,12 +37,18 @@ const usersReducer = (state = initialState, action) => {
         case FOLLOW:
             return {
                 ...state,
+<<<<<<< HEAD
                 users: objectInArray(state.users, 'id', action.userId, { followed: true })
             }
+=======
+                users: objectInArray(state.users,'id',action.userId,{followed: true})
+                }
+>>>>>>> d44ff18a5c7427420ddd9648024489b0ea2c8091
 
         case UNFOLLOW:
             return {
                 ...state,
+<<<<<<< HEAD
                 users: objectInArray(state.users, 'id', action.userId, { followed: false })
             }
 
@@ -42,6 +57,13 @@ const usersReducer = (state = initialState, action) => {
 
         case SET_USERS:
             return { ...state, users: state.users.concat(action.users) }
+=======
+                users: objectInArray(state.users,'id',action.userId,{followed: false})
+            }
+
+        case SET_USERS:
+            return { ...state, users: action.users }
+>>>>>>> d44ff18a5c7427420ddd9648024489b0ea2c8091
 
         case COUNT_USERS:
             return { ...state, totalUsersCount: action.count }
@@ -49,9 +71,12 @@ const usersReducer = (state = initialState, action) => {
         case SET_CURRENT_PAGE:
             return { ...state, currentPage: action.currentPage }
 
+<<<<<<< HEAD
         case SET_SEATCH_USER_NAME:
             return { ...state, searchUsersName: action.searchName }
 
+=======
+>>>>>>> d44ff18a5c7427420ddd9648024489b0ea2c8091
         case TOGGLE_IS_FETCHING:
             return { ...state, isFetching: action.isFetching }
 
@@ -67,8 +92,11 @@ const usersReducer = (state = initialState, action) => {
     }
 }
 
+<<<<<<< HEAD
 
 // actions
+=======
+>>>>>>> d44ff18a5c7427420ddd9648024489b0ea2c8091
 export const followSuccess = (userId) => ({
     type: FOLLOW,
     userId
@@ -84,10 +112,13 @@ export const setUsers = (users) => ({
     users
 })
 
+<<<<<<< HEAD
 export const clearUsers = () => ({
     type: CLEAR_USERS
 })
 
+=======
+>>>>>>> d44ff18a5c7427420ddd9648024489b0ea2c8091
 export const setUsersCount = (count) => ({
     type: COUNT_USERS,
     count
@@ -109,6 +140,7 @@ export const toggleFollowingProgress = (status, userId) => ({
     userId
 })
 
+<<<<<<< HEAD
 export const setSearchUsersName = (searchName) => ({
     type: SET_SEATCH_USER_NAME,
     searchName
@@ -118,6 +150,11 @@ export const setSearchUsersName = (searchName) => ({
 export const requestUsers = (currentPage, pageSize, nameFilter) => async (dispatch) => {
     dispatch(toggleIsFetching(true))
     let response = await usersAPI.getUsers(currentPage, pageSize, nameFilter)
+=======
+export const requestUsers = (currentPage, pageSize) => async (dispatch) => {
+    dispatch(toggleIsFetching(true))
+    let response = await usersAPI.getUsers(currentPage, pageSize)
+>>>>>>> d44ff18a5c7427420ddd9648024489b0ea2c8091
     dispatch(toggleIsFetching(false));
     dispatch(setUsers(response.data.items))
     dispatch(setUsersCount(response.data.totalCount))
@@ -131,11 +168,19 @@ export const followUnfollowFlow = async (dispatch, id, apiMethod, action) => {
 }
 
 export const follow = (id) => (dispatch) => {
+<<<<<<< HEAD
     followUnfollowFlow(dispatch, id, usersAPI.follow.bind(usersAPI), followSuccess(id))
 }
 
 export const unfollow = (id) => (dispatch) => {
     followUnfollowFlow(dispatch, id, usersAPI.unfollow.bind(usersAPI), unfollowSuccess(id))
+=======
+  followUnfollowFlow(dispatch,id,usersAPI.follow.bind(usersAPI),followSuccess(id))
+}
+
+export const unfollow = (id) => (dispatch) => {
+ followUnfollowFlow(dispatch,id,usersAPI.unfollow.bind(usersAPI),unfollowSuccess(id))
+>>>>>>> d44ff18a5c7427420ddd9648024489b0ea2c8091
 }
 
 export default usersReducer;

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useEffect, useState, useCallback } from 'react';
 import Preloader from '../common/preloader/Preloader';
 import s from './News.module.css';
@@ -198,4 +199,16 @@ const AddPostForm = (props) => {
             </form>}
     />
 }
+=======
+import React, { useEffect, useState } from 'react';
+import s from './News.module.css';
+
+const News = () => {
+    return (
+        <div>News</div>
+    )
+}
+
+
+>>>>>>> d44ff18a5c7427420ddd9648024489b0ea2c8091
 export default News;

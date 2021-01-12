@@ -10,20 +10,31 @@ a {
 .profile_picture {
   max-width: 110px;
   max-height: 110px;
+<<<<<<< HEAD
   object-fit: contain;
   border-radius: 50%;
+=======
+  object-fit: cover;
+  border-radius: 50%;
+  
+>>>>>>> d44ff18a5c7427420ddd9648024489b0ea2c8091
   }
 
 .profileHeaderBlock , .profileFooterBlock {
   text-align: center;
   border: 1px solid #e2e9e6;
+<<<<<<< HEAD
   background-color:#fff;
+=======
+  background-color: rgb(250, 250, 250);
+>>>>>>> d44ff18a5c7427420ddd9648024489b0ea2c8091
   padding: 20px;
 }
 
 .contactBlock , .contactBlock span {
   display: block;
   border: 1px solid #e2e9e6;
+<<<<<<< HEAD
   background-color: #fff;
   padding: 10px;
 }
@@ -41,6 +52,12 @@ a {
   padding: 0;
 }
 
+=======
+  background-color: rgb(250, 250, 250);
+  padding: 10px;
+}
+
+>>>>>>> d44ff18a5c7427420ddd9648024489b0ea2c8091
 
 .profileBodyBlock {
   height: 50px;
@@ -56,6 +73,7 @@ a {
   height: 40px;
   background-color: yellowgreen;
   cursor: pointer;
+<<<<<<< HEAD
 }
 
 .changeInfoBtn {
@@ -106,4 +124,6 @@ a {
 .profileInputPhoto + label> span {
   display: block;
   margin-top: 45px;
+=======
+>>>>>>> d44ff18a5c7427420ddd9648024489b0ea2c8091
 }

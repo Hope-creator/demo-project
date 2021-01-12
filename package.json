@@ -11,6 +11,7 @@
     "final-form": "^4.20.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+<<<<<<< HEAD
     "react-dropzone": "^11.2.4",
     "react-final-form": "^6.5.2",
     "react-fullscreen-image": "0.0.3",
@@ -19,6 +20,12 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.0",
     "react-textarea-autosize": "^8.3.0",
+=======
+    "react-final-form": "^6.5.2",
+    "react-redux": "^7.2.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^4.0.0",
+>>>>>>> d44ff18a5c7427420ddd9648024489b0ea2c8091
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0"
