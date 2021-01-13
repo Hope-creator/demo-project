@@ -1,5 +1,4 @@
 import React from 'react';
-<<<<<<< HEAD
 import { Link } from 'react-router-dom';
 import s from './Message.module.css';
 
@@ -52,13 +51,6 @@ const Message = (props) => {
                 </div>
             </div>
         </div>
-=======
-import s from './Message.module.css';
-
-const Message = (props) => {
-    return (
-        <div className={s.message}> {props.message}</div>
->>>>>>> d44ff18a5c7427420ddd9648024489b0ea2c8091
     )
 }
 

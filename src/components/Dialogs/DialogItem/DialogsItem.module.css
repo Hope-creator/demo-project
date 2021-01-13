@@ -1,9 +1,5 @@
 .dialog {
-<<<<<<< HEAD
     border: 1px solid #e6e6e6;
-=======
-    border: 1px solid #757575;
->>>>>>> d44ff18a5c7427420ddd9648024489b0ea2c8091
     width: 100%;
     height: 50px;
     box-sizing: border-box;
@@ -26,28 +22,17 @@
 
 .dialog_media {
     display: grid;
-<<<<<<< HEAD
     grid-template-areas: "mobj","minfo";
     grid-template-columns: 2fr 6fr;
     height: 100%;
 
-=======
-    grid-template-areas: "mo","mi";
-    grid-template-columns: 2fr 6fr;
-    height: 100%;
->>>>>>> d44ff18a5c7427420ddd9648024489b0ea2c8091
 }
 
 .media_object {
     width: 100%;
     height: 100%;
-<<<<<<< HEAD
     grid-area: "mobj";
     object-fit: scale-down;
-=======
-    grid-area: "mo";
-    object-fit: cover;
->>>>>>> d44ff18a5c7427420ddd9648024489b0ea2c8091
 }
 
 .media_info {
@@ -55,12 +40,8 @@
     box-sizing: border-box;
     width: 100%;
     height: 100%;
-<<<<<<< HEAD
     grid-area: "minfo";
     background-color: #fff;
-=======
-    grid-area: "mi";
->>>>>>> d44ff18a5c7427420ddd9648024489b0ea2c8091
 }
 
 

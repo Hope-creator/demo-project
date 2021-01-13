@@ -1,7 +1,6 @@
 import React from 'react';
 import Users from './Users';
 import { connect } from 'react-redux';
-<<<<<<< HEAD
 import { follow, setCurrentPage, setUsersCount, unfollow, toggleFollowingProgress, requestUsers, clearUsers, setSearchUsersName } from '../../redux/users-reducer';
 import Preloader from '../common/preloader/Preloader';
 import { getCurrentPage, getFollowingInProgress, getIsFetching, getPageSize, getTotalUsersCount, getUsers, getSearchUsersName } from '../../redux/users-selectors';
@@ -64,22 +63,6 @@ class UsersContainer extends React.Component {
     onPageChange = (pageNumber) => {
         this.props.setCurrentPage(pageNumber);
         this.props.requestUsers(pageNumber, this.props.pageSize, this.props.searchUsersName)
-=======
-import { follow, setCurrentPage, setUsersCount, unfollow, toggleFollowingProgress, requestUsers } from '../../redux/users-reducer';
-import Preloader from '../common/preloader/Preloader';
-import { getCurrentPage, getFollowingInProgress, getIsFetching, getPageSize,getTotalUsersCount,getUsers, getUsersSelector } from '../../redux/users-selectors';
-
-class UsersContainer extends React.Component {
-
-    componentDidMount() {
-        this.props.users.length == 0 && 
-        this.props.requestUsers(this.props.currentPage,this.props.pageSize)
-    }
-
-    onPageChange = (pageNumber) => {
-        this.props.setCurrentPage(pageNumber);
-        this.props.requestUsers(pageNumber,this.props.pageSize)
->>>>>>> d44ff18a5c7427420ddd9648024489b0ea2c8091
     }
 
 
@@ -95,10 +78,7 @@ class UsersContainer extends React.Component {
                 onPageChange={this.onPageChange}
                 followingInProgress={this.props.followingInProgress}
                 toggleFollowingProgress={this.props.toggleFollowingProgress}
-<<<<<<< HEAD
                 setSearchUsersName={this.props.setSearchUsersName}
-=======
->>>>>>> d44ff18a5c7427420ddd9648024489b0ea2c8091
             />
         </>
     }
@@ -122,7 +102,6 @@ let mapStateToProps = (state) => {
         totalUsersCount: getTotalUsersCount(state),
         currentPage: getCurrentPage(state),
         isFetching: getIsFetching(state),
-<<<<<<< HEAD
         followingInProgress: getFollowingInProgress(state),
         searchUsersName: getSearchUsersName(state)
     }
@@ -132,16 +111,6 @@ let mapDispatchToProps = {
     follow, unfollow,
     setUsersCount, setCurrentPage,
     toggleFollowingProgress, requestUsers, clearUsers, setSearchUsersName
-=======
-        followingInProgress: getFollowingInProgress(state)
-    }
-}
-
-let mapDispatchToProps = { 
-    follow, unfollow,
-    setUsersCount, setCurrentPage,
-    toggleFollowingProgress, requestUsers
->>>>>>> d44ff18a5c7427420ddd9648024489b0ea2c8091
 }
 
 const UsersConainer = connect(mapStateToProps, mapDispatchToProps)(UsersContainer)
